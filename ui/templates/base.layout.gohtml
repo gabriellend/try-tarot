@@ -1,0 +1,22 @@
+{{define "base"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{.Title}} - Try Tarot</title>
+    </head>
+    <body>
+        <header>
+            <h1>{{.Header}}</a></h1>
+        </header>
+        {{if eq .ShowNav true}}
+            <nav>
+                <a href='/'>Home</a>
+            </nav>
+        {{end}}
+        <main>
+            {{template "main" .}}
+        </main>
+    </body>
+</html>
+{{end}}
