@@ -10,19 +10,18 @@
     </head>
     <body>
         <header>
-            <h1>
+        <!-- Get rid of <a> tag at some point -->
+            <h1><a href=#>
                 {{if eq . "Home"}}
                     Welcome
                 {{else}}
                     {{.}} 
                 {{end}}
-            </h1>
+            </a></h1>
         </header>
-        {{if ne . "Home"}}
             <nav>
                 <a href='/'>Home</a>
             </nav>
-        {{end}}
         <main>
             {{template "main" .}}
         </main>
