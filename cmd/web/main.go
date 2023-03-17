@@ -38,25 +38,11 @@ func main() {
 		infoLog:  infoLog,
 	}
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", app.home)
-
-	// learn track
-	mux.HandleFunc("/learn", app.learn)
-	mux.HandleFunc("/learn/browse", app.browse)
-
-	// read track
-	mux.HandleFunc("/read", app.read)
-
-	// images
-	fileServer := http.FileServer(http.Dir("./ui/static/"))
-	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
-
 	// server
 	srv := &http.Server{
 		Addr:     *port,
 		ErrorLog: errorLog,
-		Handler:  mux,
+		Handler:  app.routes(),
 	}
 
 	infoLog.Printf("Starting server on %s", *port)
