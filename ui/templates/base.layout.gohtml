@@ -3,8 +3,8 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>{{.}} - Try Tarot</title>
-        <link rel='stylesheet' href='/static/css/main.css'>
+        <title>{{.Title}} - Try Tarot</title>
+        <!-- <link rel='stylesheet' href='/static/css/main.css'> -->
         <link rel='shortcut icon' href='/static/img/favicon.ico' type='image/x-icon'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700'>
     </head>
@@ -12,10 +12,10 @@
         <header>
         <!-- Get rid of <a> tag at some point -->
             <h1><a href=#>
-                {{if eq . "Home"}}
+                {{if eq .Title "Home"}}
                     Welcome
                 {{else}}
-                    {{.}} 
+                    {{.Title}} 
                 {{end}}
             </a></h1>
         </header>

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -23,7 +22,7 @@ func Parse(dir string) (*template.Template, error) {
 			if strings.Contains(path, fileType) {
 				_, err = tpl.ParseFiles(path)
 				if err != nil {
-					log.Println("ParseFiles error:", err)
+					return err
 				}
 			}
 
