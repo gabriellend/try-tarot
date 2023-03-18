@@ -1,14 +1,21 @@
 package main
 
 import (
+	"fmt"
+	"io/fs"
 	"net/http"
-
-	"github.com/gabriellend/try-tarot/pkg/models/cards"
+	"path/filepath"
+	"strings"
 )
 
 type templateParams struct {
 	Title string
-	Cards []*cards.Card
+	Cards []cardInfo
+}
+
+type cardInfo struct {
+	FileName  string
+	ParentDir string
 }
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
@@ -39,6 +46,28 @@ func (app *application) browse(w http.ResponseWriter, r *http.Request) {
 	// recursively iterate over all the files in ui/static/img/cards
 	// and store each file name as a string in a slice, then pass that
 	// slice to ExecuteTemplate
+	var cards []cardInfo
+	// Maybe extract WalkDir out because we also use it to parse
+	// the templates
+	if err := filepath.WalkDir(
+		"./ui/static/img/cards",
+		func(path string, d fs.DirEntry, err error) error {
+			if !d.IsDir() {
+				// extract parent directory
+				pathSlice := strings.Split(path, "/")
+				parentDir := pathSlice[len(pathSlice)-2]
+
+				card := cardInfo{
+					FileName:  d.Name(),
+					ParentDir: parentDir,
+				}
+				cards = append(cards, card)
+			}
+			return err
+		},
+	); err != nil {
+		fmt.Println(err)
+	}
 
 	// ANOTHER WAY
 	// store them in the database, unmarshal them into card structs,
@@ -46,16 +75,16 @@ func (app *application) browse(w http.ResponseWriter, r *http.Request) {
 	// ExecuteTemplate
 	// cards, err := cards.GetAll()
 
-	// browseParams := templateParams{
-	// 	Title: "Browse",
-	// 	Cards: cards,
-	// }
+	browseParams := templateParams{
+		Title: "Browse",
+		Cards: cards,
+	}
 
 	// // pass that to the template
-	// err = tpl.ExecuteTemplate(w, "browse.gohtml", browseParams)
-	// if err != nil {
-	// 	app.serverError(w, err)
-	// }
+	err := tpl.ExecuteTemplate(w, "browse.gohtml", browseParams)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // read track

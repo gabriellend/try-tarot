@@ -1,9 +1,9 @@
-{{define "base"}}
+{{ define "base" }}
 <!doctype html>
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>{{.Title}} - Try Tarot</title>
+        <title>{{ .Title }} - Try Tarot</title>
         <!-- <link rel='stylesheet' href='/static/css/main.css'> -->
         <link rel='shortcut icon' href='/static/img/favicon.ico' type='image/x-icon'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700'>
@@ -12,21 +12,21 @@
         <header>
         <!-- Get rid of <a> tag at some point -->
             <h1><a href=#>
-                {{if eq .Title "Home"}}
+                {{ if eq .Title "Home" }}
                     Welcome
-                {{else}}
-                    {{.Title}} 
-                {{end}}
+                {{ else }}
+                    {{ .Title }} 
+                {{ end }}
             </a></h1>
         </header>
             <nav>
                 <a href='/'>Home</a>
             </nav>
         <main>
-            {{template "main" .}}
+            {{ template "main" . }}
         </main>
-        {{template "footer" .}}
+        {{ template "footer" . }}
         <script src="/static/js/main.js" type="text/javascript"></script>
     </body>
 </html>
-{{end}}
+{{ end }}
