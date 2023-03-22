@@ -1,14 +1,23 @@
 package cards
 
 type Card struct {
-	Name             string              `json:"name"`
-	Suit             string              `json:"suit"`
-	Element          string              `json:"element"`
-	IsMinor          bool                `json:"isMinor"` // false means it's Major
-	IsCourt          bool                `json:"isCourt"`
-	IsUpright        bool                `json:"isUpright"` // false mean it's reversed
-	UprightMeanings  []string            `json:"uprightMeanings"`
-	ReversedMeanings []string            `json:"reversedMeanings"`
-	RelatedCards     []string            `json:"relatedCards"`
-	Symbols          map[string][]string `json:"symbols"`
+	Name              string   `json:"name"`
+	Number            string   `json:"number"`
+	Arcana            string   `json:"arcana"`
+	Suit              string   `json:"suit"`
+	Img               string   `json:"img"`
+	Fortune           []string `json:"fortune"`
+	Keywords          []string `json:"keywords"`
+	Meanings          Position `json:"meanings"`
+	Archetype         string   `json:"archetype"`
+	HebrewAlphabet    string   `json:"hebrew alphabet"`
+	Numerology        string   `json:"numerology"`
+	Element           string   `json:"element"`
+	MythicalSpiritual string   `json:"mythical/spiritual"`
+	QuestionsToAsk    []string `json:"questions to ask"`
+}
+
+type Position struct {
+	Upright  []string `json:"upright"`
+	Reversed []string `json:"reversed"`
 }

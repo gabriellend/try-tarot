@@ -1,21 +1,17 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/fs"
 	"net/http"
-	"path/filepath"
-	"strings"
+	"os"
+
+	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
 type templateParams struct {
-	Title string
-	Cards []cardInfo
-}
-
-type cardInfo struct {
-	FileName  string
-	ParentDir string
+	View  string
+	Cards []cards.Card
 }
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
@@ -24,8 +20,8 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	homeParams := templateParams{Title: "Home"}
-	err := tpl.ExecuteTemplate(w, "home.page.gohtml", homeParams)
+	homeParams := templateParams{View: "Home"}
+	err := tpl.ExecuteTemplate(w, "home.gohtml", homeParams)
 	if err != nil {
 		app.serverError(w, err)
 	}
@@ -33,7 +29,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 // learn track
 func (app *application) learn(w http.ResponseWriter, r *http.Request) {
-	learnParams := templateParams{Title: "Learn"}
+	learnParams := templateParams{View: "Learn"}
 	err := tpl.ExecuteTemplate(w, "learn.gohtml", learnParams)
 	if err != nil {
 		app.serverError(w, err)
@@ -41,47 +37,22 @@ func (app *application) learn(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) browse(w http.ResponseWriter, r *http.Request) {
-	// ONE WAY TO SHOW THE CARDS
-	// store the cards in the repo. you will have to
-	// recursively iterate over all the files in ui/static/img/cards
-	// and store each file name as a string in a slice, then pass that
-	// slice to ExecuteTemplate
-	var cards []cardInfo
-	// Maybe extract WalkDir out because we also use it to parse
-	// the templates
-	if err := filepath.WalkDir(
-		"./ui/static/img/cards",
-		func(path string, d fs.DirEntry, err error) error {
-			if !d.IsDir() {
-				// extract parent directory
-				pathSlice := strings.Split(path, "/")
-				parentDir := pathSlice[len(pathSlice)-2]
+	var cards []cards.Card
 
-				card := cardInfo{
-					FileName:  d.Name(),
-					ParentDir: parentDir,
-				}
-				cards = append(cards, card)
-			}
-			return err
-		},
-	); err != nil {
+	f, err := os.ReadFile("pkg/models/cards/cards.json")
+	if err != nil {
 		fmt.Println(err)
 	}
 
-	// ANOTHER WAY
-	// store them in the database, unmarshal them into card structs,
-	// put all of the image fields in a slice and pass that to
-	// ExecuteTemplate
-	// cards, err := cards.GetAll()
+	err = json.Unmarshal(f, &cards)
 
 	browseParams := templateParams{
-		Title: "Browse",
+		View:  "Browse",
 		Cards: cards,
 	}
 
 	// // pass that to the template
-	err := tpl.ExecuteTemplate(w, "browse.gohtml", browseParams)
+	err = tpl.ExecuteTemplate(w, "browse.gohtml", browseParams)
 	if err != nil {
 		app.serverError(w, err)
 	}
@@ -89,7 +60,7 @@ func (app *application) browse(w http.ResponseWriter, r *http.Request) {
 
 // read track
 func (app *application) read(w http.ResponseWriter, r *http.Request) {
-	readParams := templateParams{Title: "Get a reading"}
+	readParams := templateParams{View: "Get a reading"}
 	err := tpl.ExecuteTemplate(w, "read.gohtml", readParams)
 	if err != nil {
 		app.serverError(w, err)
