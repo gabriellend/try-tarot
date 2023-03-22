@@ -1,0 +1,9 @@
+{{ define "main" }}
+    {{ if eq .View "Home" }}
+    {{ template "home" . }}
+    {{ else if eq .View "Learn" }}
+    {{ template "learn" . }}
+    {{ else if eq .View "Browse" }}
+    {{ template "browse" . }}
+    {{ end }}
+{{ end }}
