@@ -1,38 +1,39 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
-	"path/filepath"
 	"runtime/debug"
-	"strings"
-	"text/template"
+
+	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
-// Templates
-const fileType = ".gohtml"
+// Initialization
+// loadCards takes card information in json format and puts it into a slice of (pointers to) structs
+func loadCards() []*cards.Card {
+	var cards []*cards.Card
 
-func Parse(dir string) (*template.Template, error) {
-	tpl := template.New("")
-	// Update Walk to WalkDir at some point
-	if err := filepath.Walk(
-		dir,
-		func(path string, info os.FileInfo, err error) error {
-			if strings.Contains(path, fileType) {
-				_, err = tpl.ParseFiles(path)
-				if err != nil {
-					return err
-				}
-			}
-
-			return err
-		},
-	); err != nil {
-		return nil, err
+	f, err := os.ReadFile("pkg/models/cards/cards.json")
+	if err != nil {
+		log.Fatalln(err)
 	}
 
-	return tpl, nil
+	if err = json.Unmarshal(f, &cards); err != nil {
+		log.Fatalln(err)
+	}
+
+	return cards
+}
+
+// render is a convenience wrapper for ExecuteTemplate
+func (app *application) render(w http.ResponseWriter, r *http.Request, name string, data *templateData) {
+	err := app.templates.ExecuteTemplate(w, "home.gohtml", data)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // Errors
@@ -60,3 +61,5 @@ func (app *application) clientError(w http.ResponseWriter, status int) {
 func (app *application) notFound(w http.ResponseWriter) {
 	app.clientError(w, http.StatusNotFound)
 }
+
+// perhaps create a function to check errors

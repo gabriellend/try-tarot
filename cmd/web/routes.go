@@ -9,6 +9,7 @@ func (app *application) routes() *http.ServeMux {
 	// learn track
 	mux.HandleFunc("/learn", app.learn)
 	mux.HandleFunc("/learn/browse", app.browse)
+	mux.HandleFunc("/learn/browse/card", app.showCard)
 
 	// read track
 	mux.HandleFunc("/read", app.read)

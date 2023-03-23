@@ -2,27 +2,23 @@ package main
 
 import (
 	"flag"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
-	"text/template"
+
+	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
 type application struct {
-	errorLog *log.Logger
-	infoLog  *log.Logger
+	errorLog  *log.Logger
+	infoLog   *log.Logger
+	cards     []*cards.Card
+	templates *template.Template
 }
 
-var tpl *template.Template
-
-// Make this use the custom loggers?
-func init() {
-	var err error
-	tpl, err = Parse("./ui/templates")
-	if err != nil {
-		log.Fatalln("Parse error:", err)
-	}
-}
+// global variable?
+var root = "./ui/templates"
 
 func main() {
 	// flags
@@ -34,8 +30,10 @@ func main() {
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
 	app := &application{
-		errorLog: errorLog,
-		infoLog:  infoLog,
+		errorLog:  errorLog,
+		infoLog:   infoLog,
+		cards:     loadCards(), // "database"
+		templates: loadTemplates(root),
 	}
 
 	// server
