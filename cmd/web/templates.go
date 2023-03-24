@@ -11,8 +11,9 @@ import (
 )
 
 type templateData struct {
-	View  string
-	Cards []*cards.Card
+	View        string
+	Cards       []*cards.Card
+	CurrentYear int
 }
 
 const fileType = ".gohtml"

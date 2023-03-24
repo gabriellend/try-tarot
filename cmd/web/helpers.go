@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"runtime/debug"
+	"time"
 
 	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
@@ -28,12 +30,26 @@ func loadCards() []*cards.Card {
 	return cards
 }
 
+// Data
+// addDefaultData adds common dynamic data to the templateData struct passed to templates
+func (app *application) addDefaultData(data *templateData, r *http.Request) *templateData {
+	if data == nil {
+		data = &templateData{}
+	}
+	data.CurrentYear = time.Now().Year()
+	return data
+}
+
 // render is a convenience wrapper for ExecuteTemplate
 func (app *application) render(w http.ResponseWriter, r *http.Request, name string, data *templateData) {
-	err := app.templates.ExecuteTemplate(w, "home.gohtml", data)
+	buf := new(bytes.Buffer)
+
+	err := app.templates.ExecuteTemplate(buf, "home.gohtml", app.addDefaultData(data, r))
 	if err != nil {
 		app.serverError(w, err)
 	}
+
+	buf.WriteTo(w)
 }
 
 // Errors
