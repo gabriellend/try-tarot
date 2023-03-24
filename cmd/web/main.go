@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gabriellend/try-tarot/cmd/web/templates"
 	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
@@ -33,7 +34,7 @@ func main() {
 		errorLog:  errorLog,
 		infoLog:   infoLog,
 		cards:     loadCards(), // "database"
-		templates: loadTemplates(root),
+		templates: templates.LoadTemplates(root),
 	}
 
 	// server

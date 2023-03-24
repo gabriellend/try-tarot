@@ -4,7 +4,7 @@
 <h2>Major</h2><br>
     {{ range .Cards }}
         {{ if eq .Arcana "Major" }}
-            <a href="/learn/browse/{{ toBase .Name }}">
+            <a href="/learn/browse/{{ ToBase .Name }}">
                 <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
             </a>
         {{ end }}
@@ -13,7 +13,7 @@
     <h3>Cups</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Cups" }}
-                <a href="/learn/browse/{{ toBase .Name }}">
+                <a href="/learn/browse/{{ ToBase .Name }}">
                     <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
                 </a>
             {{ end }}
@@ -21,7 +21,7 @@
     <h3>Pentacles</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Pentacles" }}
-                <a href="/learn/browse/{{ toBase .Name }}">
+                <a href="/learn/browse/{{ ToBase .Name }}">
                     <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
                 </a>
             {{ end }}
@@ -29,7 +29,7 @@
     <h3>Swords</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Swords" }}
-                <a href="/learn/browse/{{ toBase .Name }}">
+                <a href="/learn/browse/{{ ToBase .Name }}">
                     <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
                 </a>
             {{ end }}
@@ -37,7 +37,7 @@
     <h3>Wands</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Wands" }}
-                <a href="/learn/browse/{{ toBase .Name }}">
+                <a href="/learn/browse/{{ ToBase .Name }}">
                     <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
                 </a>
             {{ end }}

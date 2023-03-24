@@ -1,4 +1,4 @@
-package main
+package templates
 
 import (
 	"html/template"
@@ -10,7 +10,7 @@ import (
 	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
-type templateData struct {
+type Data struct {
 	View        string
 	Cards       []*cards.Card
 	CurrentYear int
@@ -18,26 +18,19 @@ type templateData struct {
 
 const fileType = ".gohtml"
 
-var functions = template.FuncMap{
-	"toBase": toBase,
+var funcs = template.FuncMap{
+	"ToBase": cards.ToBase,
 }
 
-// toBase replaces spaces with hyphens in a string to use it as
-// the last element in a url path
-func toBase(name string) string {
-	b := strings.NewReplacer(" ", "-")
-	return strings.ToLower(b.Replace(name))
-}
-
-// fromBase reverses toBase. Not currently using.
-func fromBase(base string) string {
-	n := strings.NewReplacer("-", " ")
-	return strings.Title(n.Replace(base))
-}
+// fromBase reverses ToBase. Not currently using.
+// func FromBase(base string) string {
+// 	n := strings.NewReplacer("-", " ")
+// 	return strings.Title(n.Replace(base))
+// }
 
 // loadTemplates recursively parses templates and returns them
-func loadTemplates(dir string) *template.Template {
-	tpl := template.New("").Funcs(functions)
+func LoadTemplates(dir string) *template.Template {
+	tpl := template.New("").Funcs(funcs)
 
 	// Update Walk to WalkDir at some point
 	if err := filepath.Walk(
