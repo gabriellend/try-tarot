@@ -1,17 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"io"
 	"net/http"
+
+	"github.com/gabriellend/try-tarot/pkg/models/cards"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		app.notFound(w)
-		return
-	}
-
 	data := &templateData{View: "Home"}
 
 	app.render(w, r, "home.gohtml", data)
@@ -34,18 +29,21 @@ func (app *application) browse(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) showCard(w http.ResponseWriter, r *http.Request) {
-	card := r.URL.Query().Get("card")
+	name := r.URL.Query().Get(":card")
+	var card []*cards.Card
 
-	io.WriteString(w, fmt.Sprintf("the card is %v", card))
-	// data := templateData{
-	// 	View:  ,
-	// 	Cards: cards,
-	// }
+	for _, v := range app.cards {
+		if toBase(v.Name) == name {
+			card = append(card, v)
+		}
+	}
 
-	// err = tpl.ExecuteTemplate(w, "browse.gohtml", data)
-	// if err != nil {
-	// 	app.serverError(w, err)
-	// }
+	data := &templateData{
+		View:  "Browse",
+		Cards: card,
+	}
+
+	app.render(w, r, "card.gohtml", data)
 }
 
 // read track

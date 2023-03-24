@@ -4,32 +4,42 @@
 <h2>Major</h2><br>
     {{ range .Cards }}
         {{ if eq .Arcana "Major" }}
-            <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+            <a href="/learn/browse/{{ toBase .Name }}">
+                <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+            </a>
         {{ end }}
     {{ end }}
 <h2>Minor</h2><br>
     <h3>Cups</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Cups" }}
-                <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                <a href="/learn/browse/{{ toBase .Name }}">
+                    <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                </a>
             {{ end }}
         {{ end }}
     <h3>Pentacles</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Pentacles" }}
-                <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                <a href="/learn/browse/{{ toBase .Name }}">
+                    <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                </a>
             {{ end }}
         {{ end }}
     <h3>Swords</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Swords" }}
-                <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                <a href="/learn/browse/{{ toBase .Name }}">
+                    <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                </a>
             {{ end }}
         {{ end }}
     <h3>Wands</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Wands" }}
-                <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                <a href="/learn/browse/{{ toBase .Name }}">
+                    <img src="../../static/img/cards/{{ .Img }}" alt="{{ .Img }}" width="100px">
+                </a>
             {{ end }}
         {{ end }}
 {{ end }}

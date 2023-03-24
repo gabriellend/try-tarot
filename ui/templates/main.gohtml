@@ -3,6 +3,9 @@
     {{ template "home" . }}
     {{ else if eq .View "Learn" }}
     {{ template "learn" . }}
+    <!-- I don't love this -->
+    {{ else if and (eq .View "Browse") (eq (len .Cards) 1) }}
+    {{ template "card" . }}
     {{ else if eq .View "Browse" }}
     {{ template "browse" . }}
     {{ end }}

@@ -1,0 +1,7 @@
+{{template "base" .}}
+
+{{ define "card" }}
+    {{ $card := index .Cards 0 }}
+    <h2>{{ $card.Name }}</h2><br>
+    <img src="../../static/img/cards/{{ $card.Img }}" alt="{{ $card.Img }}">
+{{ end }}
