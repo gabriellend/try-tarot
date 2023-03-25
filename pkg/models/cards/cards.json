@@ -951,6 +951,7 @@
             "Indulging in hysteria or obsession"
         ]
     },
+    "element" : "Water",
     "numerology" : "1 (The Origin: the starting point, the seed, opportunity)",
     "astrology" : "Cancer, Scorpio, Pisces",
     "affirmation" : "\"I listen to the counsel of my heart.\"",
@@ -992,6 +993,7 @@
                     "Deceiving yourself about your true orientation"
                 ]
             },
+            "element" : "Water",
         "numerology" : "2 (The Other: duality, division, debate)",
     "astrology" : "Venus in Cancer",
     "affirmation" : "\"I am attuned to what my heart truly desires.\"",
@@ -1028,6 +1030,7 @@
                     "Partying to a dangerous or unhealthy extent"
                 ]
             },
+            "element" : "Water",
         "numerology" : "3 (The Result: expression, productivity, output)",
     "astrology" : "Mercury in Cancer",
     "affirmation" : "\"I allow my actions to reflect my true emotions.\"",
@@ -1067,6 +1070,7 @@
                     "Feeling everything should stay \"just like it is\""
                 ]
             },
+            "element" : "Water",
         "numerology" : "4 (The Status Quo: stability, equality, persistence)",
     "astrology" : "Moon in Cancer",
     "affirmation" : "\"I appreciate what I've been given.\"",
@@ -1110,6 +1114,7 @@
                     "Allowing fear of failure to limit your efforts"
                 ]
             },
+            "element" : "Water",
         "numerology" : "5 (The Catalyst: instability, resistance, confrontation)",
     "astrology" : "Mars in Scorpio",
     "affirmation" : "\"I learn from my losses and move on.\"",
@@ -1149,6 +1154,7 @@
                     "Refusing to share a burden"
                 ]
             },
+            "element" : "Water",
         "numerology" : "6 (The Adjustment: cooperation, collaboration, interaction)",
     "astrology" : "Sun in Scorpio",
     "affirmation" : "\"I freely give myself to others, expecting nothing in return.\"",
@@ -1186,6 +1192,7 @@
                     "Being controlled by fear"
                 ]
             },
+            "element" : "Water",
         "numerology" : "7 (The Motive: imagination, inner work, psychology)",
     "astrology" : "Venus in Scorpio",
     "affirmation" : "\"I use inner vision as a tool for growth.\"",
@@ -1229,6 +1236,7 @@
                     "Threatening to quit as a strategy to get your way"
                 ]
             },
+            "element" : "Water",
         "numerology" : "8 (The Action: movement, outer work, swiftness)",
     "astrology" : "Saturn in Pisces",
     "affirmation" : "\"I am always open to opportunities for growth.\"",
@@ -1268,6 +1276,7 @@
                     "Never being satisfied, no matter how much you have"
                 ]
             },
+            "element" : "Water",
         "numerology" : "9 (The Completion: fullness, readiness, ripeness)",
     "astrology" : "Jupiter in Pisces",
     "affirmation" : "\"I have everything I need to be happy.\"",
@@ -1304,6 +1313,7 @@
                     "Envying the achievements and happiness of others"
                 ]
             },
+            "element" : "Water",
         "numerology" : "10 (The End: finality, completion, exhaustion)",
     "astrology" : "Mars in Pisces",
     "affirmation" : "\"I take time to appreciate what I've been given.\"",
@@ -1489,6 +1499,7 @@
                     "Making decisions without thinking through consequences"
                 ]
             },
+            "element" : "Air",
         "numerology" : "1 (The Origin: the starting point, the seed, opportunity)",
     "astrology" : "Libra, Aquarius, Gemini",
     "affirmation" : "\"I take the time to think things through.\"",
@@ -1527,6 +1538,7 @@
                     "Preventing others from getting the information they need to make good decisions"
                 ]
             },
+            "element" : "Air",
         "numerology" : "2 (The Other: duality, division, debate)",
     "astrology" : "Moon in Libra",
     "affirmation" : "\"I strive to see all sides of every issue.\"",
@@ -1565,6 +1577,7 @@
                     "Wearing your heart on your sleeve while carrying a chip on your shoulder"
                 ]
             },
+            "element" : "Air",
         "numerology" : "3 (The Result: expression, productivity, output)",
     "astrology" : "Saturn in Libra",
     "affirmation" : "\"I learn from failures and setbacks.\"",
@@ -1601,6 +1614,7 @@
                     "Allowing chaos and whimsy to dominate your thoughts"
                 ]
             },
+            "element" : "Air",
         "numerology" : "4 (The Status Quo: stability, equality, persistence)",
     "astrology" : "Jupiter in Libra",
     "affirmation" : "\"I think before taking action.\"",
@@ -1642,6 +1656,7 @@
                     "Gloating over victory"
                 ]
             },
+            "element" : "Air",
         "numerology" : "5 (The Catalyst: instability, resistance, confrontation)",
     "astrology" : "Venus in Aquarius",
     "affirmation" : "\"Even as I care for myself, I am mindful of the needs of others.\"",
@@ -1681,6 +1696,7 @@
                     "Believing the whole world should be like your small corner of it"
                 ]
             },
+            "element" : "Air",
         "numerology" : "6 (The Adjustment: cooperation, collaboration, interaction)",
     "astrology" : "Mercury in Aquarius",
     "affirmation" : "\"I keep an open mind.\"",
@@ -1718,6 +1734,7 @@
                     "Failing to examine your own motives and prejudices"
                 ]
             },
+            "element" : "Air",
         "numerology" : "7 (The Motive: imagination, inner work, psychology)",
     "astrology" : "Moon in Aquarius",
     "affirmation" : "\"I hold myself to the highest ethical standards.\"",
@@ -1760,6 +1777,7 @@
                     "Failing to look for a way out"
                 ]
             },
+            "element" : "Air",
         "numerology" : "8 (The Action: movement, outer work, swiftness)",
     "astrology" : "Jupiter in Gemini",
     "affirmation" : "\"I know my own limits.\"",
@@ -1800,6 +1818,7 @@
                     "Debating irreversible decisions"
                 ]
             },
+            "element" : "Air",
         "numerology" : "9 (The Completion: fullness, readiness, ripeness)",
     "astrology" : "Mars in Gemini",
     "affirmation" : "\"I do not worry about what I cannot control.\"",
@@ -1841,6 +1860,7 @@
                     "Deeply unhealthy thoughts"
                 ]
             },
+            "element" : "Air",
         "numerology" : "10 (The End: finality, completion, exhaustion)",
     "astrology" : "Sun in Gemini",
     "affirmation" : "\"When my limits are exceeded, I take action on my own behalf.\"",
@@ -1880,9 +1900,9 @@
                     "Rejecting the wise counsel of experienced teachers"
                 ]
             },
-        "element" : "Earth of Air.",
+    "element" : "Earth of Air.",
     "affirmation" : "\"I am ready to make good decisions.\"",
-        "questions to ask" : ["How comfortable are you with revealing your own ignorance?","What are the marks of a good student?","To what extent are you open to new information?"]
+    "questions to ask" : ["How comfortable are you with revealing your own ignorance?","What are the marks of a good student?","To what extent are you open to new information?"]
     },
     {
     "name": "Knight of Swords",
@@ -2044,6 +2064,7 @@
                     "Failing to take a stand"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "1 (The Origin: the starting point, the seed, opportunity)",
     "astrology" : "Aries, Leo, Sagittarius",
     "affirmation" : "\"I jump at the opportunity to pursue my heart's desire.\"",
@@ -2082,6 +2103,7 @@
                     "Disregarding the input of others"
                 ]
             },
+            "element" : "Fire",
     "numerology" : "2 (The Other: division, debate, duality)",
     "astrology" : "Mars in Aries",
     "affirmation" : "\"With my goals in mind, I make confident choices.\"",
@@ -2120,6 +2142,7 @@
                     "Failing to finish what you start"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "3 (The Result: expression, productivity, output)",
     "astrology" : "Sun in Aries",
     "affirmation" : "\"I take the steps necessary to put my plans in action.\"",
@@ -2158,6 +2181,7 @@
                     "Refusing to do your part"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "4 (The Status Quo: stability, equality, persistence)",
     "astrology" : "Venus in Aries",
     "affirmation" : "\"My contributions are worthy of celebration.\"",
@@ -2195,6 +2219,7 @@
                     "Disrupting progress with an endless stream of pointless objections"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "5 (The Catalyst: instability, resistance, confrontation)",
     "astrology" : "Saturn in Leo",
     "affirmation" : "\"I can express dissent in constructive ways.\"",
@@ -2236,6 +2261,7 @@
                     "Envying the achievements of others"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "6 (The Adjustment: cooperation, collaboration, interaction)",
     "astrology" : "Jupiter in Leo",
     "affirmation" : "\"I value sincere praise.\"",
@@ -2273,6 +2299,7 @@
                     "Refusing to stand up for yourself and your beliefs"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "7 (The Motive: imagination, inner work, psychology)",
     "astrology" : "Mars in Leo",
     "affirmation" : "\"I am willing to take a stand for what I believe in.\"",
@@ -2313,6 +2340,7 @@
                     "Refusing to re-evaluate a schedule or program, even when it's clearly no longer appropriate"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "8 (The Action: movement, outer work, swiftness)",
     "astrology" : "Mercury in Sagittarius",
     "affirmation" : "\"I adapt quickly to change.\"",
@@ -2355,6 +2383,7 @@
                     "Beating a dead horse"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "9 (The Completion: fullness, readiness, ripeness)",
     "astrology" : "Moon in Sagittarius",
     "affirmation" : "\"When the going gets tough, I stay the course.\"",
@@ -2392,6 +2421,7 @@
                     "Over-extending yourself on a regular basis"
                 ]
             },
+            "element" : "Fire",
         "numerology" : "10 (The End: finality, completion, exhaustion)",
     "astrology" : "Saturn in Sagittarius",
     "affirmation" : "\"I respect my own limits.\"",
@@ -2572,6 +2602,7 @@
                     "Taking what you want without concern for the needs of others"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "1 (The Origin: the starting point, the seed, opportunity)",
     "astrology" : "Capricorn, Taurus, Virgo",
     "affirmation" : "\"I am open to and thankful for my blessings.\"",
@@ -2611,6 +2642,7 @@
                     "Engaging in behavior with no regard for how your body or bankbook will be impacted"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "2 (The Other: duality, division, debate)",
     "astrology" : "Jupiter in Capricorn",
     "affirmation" : "\"Before taking action, I consider costs.\"",
@@ -2651,6 +2683,7 @@
                     "Failing to abide by a clearly-outlined agreement with yourself or others"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "3 (The Result: expression, productivity, output)",
     "astrology" : "Mars in Capricorn",
     "affirmation" : "\"My work produces results.\"",
@@ -2690,6 +2723,7 @@
                     "Failing to be a good manager of the blessings you've been given"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "4 (The Status Quo: stability, equality, persistence)",
     "astrology" : "Sun in Capricorn",
     "affirmation" : "\"I use my resources wisely.\"",
@@ -2730,6 +2764,7 @@
                     "Wallowing in misery"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "5 (The Catalyst: instability, resistance, confrontation)",
     "astrology" : "Mercury in Taurus",
     "affirmation" : "\"I have faith that what I need will appear.\"",
@@ -2770,6 +2805,7 @@
                     "Ignoring obligations and commitments"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "6 (The Adjustment: cooperation, collaboration, interaction)",
     "astrology" : "Moon in Taurus",
     "affirmation" : "\"Knowing I will receive more, I share my resources freely.\"",
@@ -2809,6 +2845,7 @@
                     "Refusing to take part in a project, then whining about the quality of the outcome"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "7 (The Motive: imagination, inner work, psychology)",
     "astrology" : "Saturn in Taurus",
     "affirmation" : "\"To stay on target, I measure my progress.\"",
@@ -2850,6 +2887,7 @@
                     "Rejecting opportunities to learn more about your craft"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "8 (The Action: movement, outer work, swiftness)",
     "astrology" : "Sun in Virgo",
     "affirmation" : "\"I give myself wholeheartedly to the task of the moment.\"",
@@ -2887,6 +2925,7 @@
                     "Always craving more"
                 ]
             },
+            "element" : "Earth",
         "numerology" : "9 (The Completion: fullness, readiness, ripeness)",
     "astrology" : "Venus in Virgo",
     "affirmation" : "\"I know enough to be confident in my decisions.\"",
@@ -2925,6 +2964,7 @@
                     "Always asking, \"What's in it for me?\""
                 ]
             },
+            "element" : "Earth",
         "numerology" : "10 (The End: finality, completion, exhaustion)",
     "astrology" : "Mercury in Virgo",
     "affirmation" : "\"I keep physical and financial matters in perspective.\"",
@@ -2964,7 +3004,7 @@
                     "Using wealth or beauty as an excuse for not having to learn and grow"
                 ]
             },
-        "element" : "Earth of Earth.",
+    "element" : "Earth of Earth.",
     "affirmation" : "\"I am physically and financially responsible.\"",
     "questions to ask" : ["How can you get more financial or sexual experience without risking your livelihood or health?","How might hands-on learning play a role in your situation?","What's the most practical choice you could make?"]
     },
