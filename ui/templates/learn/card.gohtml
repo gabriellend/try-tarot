@@ -2,23 +2,33 @@
 
 {{ define "card" }}
     {{ $card := index .Cards 0 }}
-    <h2>{{ $card.Name }}</h2><br>
-    <img src="../../static/img/cards/{{ $card.Img }}" alt="{{ $card.Img }}">
-    <p><strong>Arcana:</strong> {{ $card.Arcana }}</p>
-    <p><strong>Suit:</strong> {{ $card.Suit }}</p>
-    <p><strong>Element:</strong> {{ $card.Element }}</p>
-    <p><strong>Upright Meanings:</strong>
-        <ul>
-        {{ range $card.Meanings.Upright }}
-            <li>{{ . }}</li>
-        {{ end }}
-        </ul>
-    </p>
-    <p><strong>Reversed Meanings:</strong>
-        <ul>
-        {{ range $card.Meanings.Reversed }}
-            <li>{{ . }}</li>
-        {{ end }}
-        </ul>    
-    </p>
+    <div class="container">
+        <h2 class="text-center">{{ $card.Name }}</h2><br>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <img src="../../static/img/cards/{{ $card.Img }}" alt="{{ $card.Img }}">
+            </div>
+            <div class="col-md-5">
+                <p><strong>Arcana:</strong> {{ $card.Arcana }}</p>
+                {{ if ne $card.Suit "Trump" }}
+                    <p><strong>Suit:</strong> {{ $card.Suit }}</p>
+                {{ end }}
+                <p><strong>Element:</strong> {{ $card.Element }}</p>
+                <p><strong>Upright Meanings:</strong>
+                    <ul>
+                    {{ range $card.Meanings.Upright }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>
+                </p>
+                <p><strong>Reversed Meanings:</strong>
+                    <ul>
+                    {{ range $card.Meanings.Reversed }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>    
+                </p>
+            </div>
+        </div>
+    </div>
 {{ end }}

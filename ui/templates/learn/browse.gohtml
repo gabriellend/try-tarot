@@ -9,7 +9,7 @@
             </a>
         {{ end }}
     {{ end }}
-<h2>Minor</h2><br>
+<h2 class="pt-3">Minor</h2><br>
     <h3>Cups</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Cups" }}
@@ -18,7 +18,7 @@
                 </a>
             {{ end }}
         {{ end }}
-    <h3>Pentacles</h3><br>
+    <h3 class="pt-3">Pentacles</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Pentacles" }}
                 <a href="/learn/browse/{{ ToBase .Name }}">
@@ -26,7 +26,7 @@
                 </a>
             {{ end }}
         {{ end }}
-    <h3>Swords</h3><br>
+    <h3 class="pt-3">Swords</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Swords" }}
                 <a href="/learn/browse/{{ ToBase .Name }}">
@@ -34,7 +34,7 @@
                 </a>
             {{ end }}
         {{ end }}
-    <h3>Wands</h3><br>
+    <h3 class="pt-3">Wands</h3><br>
         {{ range .Cards }}
             {{ if eq .Suit "Wands" }}
                 <a href="/learn/browse/{{ ToBase .Name }}">
