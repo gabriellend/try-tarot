@@ -1,7 +1,6 @@
 package cards
 
 import (
-	"math/rand"
 	"strings"
 )
 
@@ -45,13 +44,13 @@ func Random(cards []*Card) Card {
 
 	switch {
 	case major:
-		card = cards[rand.Intn(22)]
+		card = cards[r.Intn(22)]
 	case minor:
-		card = cards[rand.Intn(56)]
+		card = cards[r.Intn(56)]
 	case suit:
-		card = cards[rand.Intn(14)]
+		card = cards[r.Intn(14)]
 	default:
-		card = cards[rand.Intn(78)]
+		card = cards[r.Intn(78)]
 	}
 
 	return *card

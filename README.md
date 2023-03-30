@@ -5,4 +5,4 @@ This is an in-progress repository to improve my Go skills. In the end it may inc
 - receiving a personal reading, perhaps based on user input
 - AI that compares your interpretation of a reading with that of an experienced reader
 
-Card images and data was pulled from https://www.kaggle.com/datasets/lsind18/tarot-json?resource=download and slightly modified to meet my needs.
+Card images and data were pulled from https://www.kaggle.com/datasets/lsind18/tarot-json?resource=download and slightly modified to meet my needs.

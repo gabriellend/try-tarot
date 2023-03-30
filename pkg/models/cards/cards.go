@@ -22,11 +22,13 @@ type Card struct {
 	QuestionsToAsk    []string `json:"questions to ask"`
 }
 
+var r *rand.Rand
+
 type Position struct {
 	Upright  []string `json:"upright"`
 	Reversed []string `json:"reversed"`
 }
 
 func init() {
-	rand.Seed(time.Now().UnixNano())
+	r = rand.New(rand.NewSource(time.Now().UnixNano()))
 }
