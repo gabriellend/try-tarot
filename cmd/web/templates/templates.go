@@ -14,12 +14,14 @@ type Data struct {
 	View        string
 	Cards       []*cards.Card
 	CurrentYear int
+	Set         string
 }
 
 const fileType = ".gohtml"
 
 var funcs = template.FuncMap{
 	"ToBase": cards.ToBase,
+	"Random": cards.Random,
 }
 
 // fromBase reverses ToBase. Not currently using.

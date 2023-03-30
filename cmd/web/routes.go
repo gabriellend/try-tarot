@@ -16,6 +16,8 @@ func (app *application) routes() http.Handler {
 	mux.Get("/learn", http.HandlerFunc(app.learn))
 	mux.Get("/learn/browse", http.HandlerFunc(app.browse))
 	mux.Get("/learn/browse/:card", http.HandlerFunc(app.showCard))
+	mux.Get("/learn/flash-cards", http.HandlerFunc(app.chooseSet))
+	mux.Get("/learn/flash-cards/:set", http.HandlerFunc(app.flashCards))
 	// read track
 	mux.Get("/read", http.HandlerFunc(app.read))
 	// images, css, js

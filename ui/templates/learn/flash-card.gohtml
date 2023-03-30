@@ -1,0 +1,53 @@
+{{template "base" .}}
+
+{{ define "flash-card" }}
+    {{ $card := Random .Cards }}
+    <div class="container">
+        <h2 class="text-center">{{ $card.Name }}</h2><br>
+       <div class="d-flex justify-content-center">
+            <div id="img" style="width: 350px; height: 600px">
+                <img src="../../static/img/cards/{{ $card.Img }}" alt="{{ $card.Img }}" onclick="flipCard(this)">
+            </div>
+            <div id="info" class="p-3 border border-dark border-3 d-none text-wrap" style="width: 350px; height: 600px;" onclick="flipCard(this)">
+                <p><strong>Arcana:</strong> {{ $card.Arcana }}</p>
+                {{ if ne $card.Suit "Trump" }}
+                    <p><strong>Suit:</strong> {{ $card.Suit }}</p>
+                {{ end }}
+                <p><strong>Element:</strong> {{ $card.Element }}</p>
+                <p><strong>Upright Meanings:</strong>
+                    <ul>
+                    {{ range $card.Meanings.Upright }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>
+                </p>
+                <p><strong>Reversed Meanings:</strong>
+                    <ul>
+                    {{ range $card.Meanings.Reversed }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>    
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const flipCard = (elem) => {
+            var id = elem.parentNode.id;
+            console.log("id:", id)
+            if (id == "img") {
+                document.getElementById("img").classList.remove("d-inline");
+                document.getElementById("img").classList.add("d-none");
+
+                document.getElementById("info").classList.remove("d-none");
+                document.getElementById("info").classList.add("d-block");
+            } else {
+                document.getElementById("img").classList.remove("d-none");
+                document.getElementById("img").classList.add("d-inline");
+
+                document.getElementById("info").classList.remove("d-block");
+                document.getElementById("info").classList.add("d-none");
+            }
+        }
+    </script>
+{{ end }}

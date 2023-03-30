@@ -8,5 +8,9 @@
     {{ template "card" . }}
     {{ else if eq .View "Browse" }}
     {{ template "browse" . }}
+    {{ else if and (eq .View "Flash Cards") (gt (len .Cards) 0) }}
+    {{ template "flash-card" . }}
+    {{ else if eq .View "Flash Cards" }}
+    {{ template "flash-cards" . }}
     {{ end }}
 {{ end }}

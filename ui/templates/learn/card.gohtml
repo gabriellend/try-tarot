@@ -14,6 +14,9 @@
                     <p><strong>Suit:</strong> {{ $card.Suit }}</p>
                 {{ end }}
                 <p><strong>Element:</strong> {{ $card.Element }}</p>
+                {{ if $card.Numerology }}
+                    <p><strong>Numerology:</strong> {{ $card.Numerology }}</p>
+                {{ end }}
                 <p><strong>Upright Meanings:</strong>
                     <ul>
                     {{ range $card.Meanings.Upright }}

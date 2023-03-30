@@ -1,5 +1,10 @@
 package cards
 
+import (
+	"math/rand"
+	"time"
+)
+
 type Card struct {
 	Name              string   `json:"name"`
 	Number            string   `json:"number"`
@@ -20,4 +25,8 @@ type Card struct {
 type Position struct {
 	Upright  []string `json:"upright"`
 	Reversed []string `json:"reversed"`
+}
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
 }

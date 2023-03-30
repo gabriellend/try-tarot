@@ -44,6 +44,30 @@ func (app *application) showCard(w http.ResponseWriter, r *http.Request) {
 	app.render(w, r, "card.gohtml", data)
 }
 
+func (app *application) chooseSet(w http.ResponseWriter, r *http.Request) {
+	data := &templates.Data{
+		View: "Flash Cards",
+	}
+
+	app.render(w, r, "flash-cards.gohtml", data)
+}
+
+func (app *application) flashCards(w http.ResponseWriter, r *http.Request) {
+	set := r.URL.Query().Get(":set")
+	cards, err := cards.GetSet(set, app.cards)
+	if err != nil {
+		app.serverError(w, err)
+	}
+
+	data := &templates.Data{
+		View:  "Flash Cards",
+		Cards: cards,
+		Set:   set,
+	}
+
+	app.render(w, r, "flash-card.gohtml", data)
+}
+
 // read track
 func (app *application) read(w http.ResponseWriter, r *http.Request) {
 	data := &templates.Data{View: "Get a reading"}

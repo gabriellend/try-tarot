@@ -45,7 +45,7 @@ func (app *application) addDefaultData(data *templates.Data, r *http.Request) *t
 func (app *application) render(w http.ResponseWriter, r *http.Request, name string, data *templates.Data) {
 	buf := new(bytes.Buffer)
 
-	err := app.templates.ExecuteTemplate(buf, "home.gohtml", app.addDefaultData(data, r))
+	err := app.templates.ExecuteTemplate(buf, name, app.addDefaultData(data, r))
 	if err != nil {
 		app.serverError(w, err)
 	}
